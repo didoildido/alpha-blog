@@ -1,0 +1,18 @@
+<h1>Create a new article</h1>
+
+<!-- Use this if want render the output form cheks also in article controller -->
+<!-- add 'data: {turbo: false}' into form_with -->
+
+<%= form_with scope: :article, url: articles_path, data: {turbo: false} , local: true do |f| %>
+  <p> 
+    <%= f.label :title %><br/> 
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br/> 
+    <%= f.text_area :description %> 
+  </p>
+  <p>
+    <%= f.submit %> 
+  </p>
+<% end %>
