@@ -1,5 +1,14 @@
 <h1>Create a new article</h1>
 
+<% if @article.errors.any? %>
+  <h2>The following error prevented the article from being saved</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <!-- Use this if want render the output form cheks also in article controller -->
 <!-- add 'data: {turbo: false}' into form_with -->
 
